@@ -4,7 +4,7 @@ import ProgressBar from '../components/ProgressBar';
 import CharacterImage from '../components/CharacterImage';
 import FleeingButton from '../components/FleeingButton';
 import { ASSETS } from '../assets';
-import { playClickSound } from '../utils/audio';
+import { playSuccessSound } from '../utils/audio';
 import type { StepProps } from '../types';
 
 /**
@@ -73,7 +73,7 @@ export default function StepProposal({ onNext, isVisible }: StepProps) {
                         <button
                             className="pixel-btn-sim"
                             onClick={() => {
-                                playClickSound();
+                                playSuccessSound();
                                 handleSim();
                             }}
                         >

@@ -194,7 +194,6 @@ export default function StepAchievement({ onNext, isVisible }: StepProps) {
             const file = new File([blob], fileName, { type: 'image/gif' });
 
             // ── Native Share first ──
-            let shared = false;
             if (navigator.share && navigator.canShare) {
                 const shareData = {
                     files: [file],
@@ -204,7 +203,6 @@ export default function StepAchievement({ onNext, isVisible }: StepProps) {
                 if (navigator.canShare(shareData)) {
                     try {
                         await navigator.share(shareData);
-                        shared = true;
                     } catch (e) {
                         console.log('Share dismissed', e);
                     }
